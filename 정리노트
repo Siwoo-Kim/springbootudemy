@@ -26,6 +26,23 @@ Spring Boot
         "default" Profile?
             - 활성화된 Profile 이 없을 경우 스프링이 활성화하는 프로파일 이름.
 
+    Bean 생명주기?
+        1.BeanNameAware#setBeanName(name:lifeCycleDemoBean)
+        2.BeanFactoryAware#setBeanFactory
+        3.ApplicationContextAware#setApplicationContext
+        4.BeanPostProcessor#postProcessBeforeInitialization
+        5.@PostConstruct#postConstruct
+        6.BeanPostProcessor#afterPropertiesSet
+        7.@BeanPostProcessor#postProcessAfterInitialization
+        8.빈 생성 완료
+
+    BeanPostProcessor?
+        - ApplicationContext 는 BeanPostProcessor 의 정의에서 (Bean 을 자동으로 검출하여) 나중에 생성된 Bean 의 생명주기 시점을 가로챌 수 있다.
+            postProcessBeforeInitialization(Object bean, String beanName) throws BeansException?
+                - 빈이 DI 가 완료되기 전의 생성 시점을 가로챔
+            postProcessAfterInitialization(Object bean, String beanName) throws BeansException?
+                - 빈이 DI 가 완료된 시점을 가로챔
+
     Event?
         ApplicationListener<Event>?
             - ApplicationEventListener 가 구현할 인터페이스입니다.
