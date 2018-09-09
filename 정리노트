@@ -1,0 +1,21 @@
+
+ApplicationListener<Event>?
+    - ApplicationEventListener 가 구현할 인터페이스입니다.
+      ApplicationListener 는 일반적으로 이벤트 유형을 선언할 수 있습니다.
+      Spring ApplicationContext 에 등록된 경우, 이벤트는 그에 따라 필터링되며, Listener 는 일치 이벤트에 따라 호출.
+    ContextRefreshedEvent extends ApplicationContextEvent?
+        - {@code ApplicationContext}이(가) 초기화되거나 새로 고쳐질 때 발생하는 이벤트.
+
+H2 Console?
+    H2 설정?
+        - spring.h2.console.enabled=true
+        - spring.h2.console.path=/console
+        spring.h2.console.path?
+            - 콘솔 어플리케이션의 url path 를 지정한다.
+
+
+JPA
+    HibernateException?
+        org.hibernate.TransientPropertyValueException: object references an unsaved transient instance
+            - 플러시하기 전에 PersistenceContext 에 임시 인스턴스를 저장하지 않았을 경우 발생하는 예외
+
