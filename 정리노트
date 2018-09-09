@@ -1,10 +1,38 @@
+Git Issue?
+    - GitHub는 기능에 대해 논의하거나 버그를 추적하거나
+    혹은 두 가지 경우 모두 사용될 수 있는 Issue 라는 기능을 갖고 있다.
 
-ApplicationListener<Event>?
-    - ApplicationEventListener 가 구현할 인터페이스입니다.
-      ApplicationListener 는 일반적으로 이벤트 유형을 선언할 수 있습니다.
-      Spring ApplicationContext 에 등록된 경우, 이벤트는 그에 따라 필터링되며, Listener 는 일치 이벤트에 따라 호출.
-    ContextRefreshedEvent extends ApplicationContextEvent?
-        - {@code ApplicationContext}이(가) 초기화되거나 새로 고쳐질 때 발생하는 이벤트.
+Spring Boot
+    main 함수?
+        SpringApplication 클래스?
+            SpringApplication.run(Class<?> primarySource,String... args)?
+                - * 기본 설정을 사용하여 지정된 소스에서 {@link SpringApplication}을(를) 실행하는 데 사용할 수 있는 정적 도우미.
+                  * @param primarySource to loading 기본 소스
+                  * @param이 응용프로그램 인수(일반적으로 Java 기본 방법에서 전달됨)
+                  * 실행 중인 {@link ApplicationContext} 반환
+    DI?
+        @Primary?
+            - 여러 빈 후보 중 Primary 을 지정하면 자동 주입 충돌시 Primary 빈을 자동 주입 대상으로 선정.
+
+    Profile?
+        - * Profile 은 이름이 지정된 논리 그룹이며, ConfigurableEnvironment#setActiveProfiles을 통해 프로그램 방식으로 활성화.
+        spring.profiles.active 속성 환경 변수 또는 웹 애플리케이션의 경우 {@code web.xml}의 Servlet 컨텍스트 매개 변수로 사용할 수 있습니다.
+        @ActiveProfiles 어노테이션을 통해 통합 테스트에서 프로파일을 선언적으로 활성화할 수도 있습니다.
+
+        @Profile 어노테이션?
+            - Profile 논리 그룹을 지정한다.
+        application.properties?
+            - spring.profiles.active=[활성화프로파일이름]
+        "default" Profile?
+            - 활성화된 Profile 이 없을 경우 스프링이 활성화하는 프로파일 이름.
+
+    Event?
+        ApplicationListener<Event>?
+            - ApplicationEventListener 가 구현할 인터페이스입니다.
+              ApplicationListener 는 일반적으로 이벤트 유형을 선언할 수 있습니다.
+              Spring ApplicationContext 에 등록된 경우, 이벤트는 그에 따라 필터링되며, Listener 는 일치 이벤트에 따라 호출.
+            ContextRefreshedEvent extends ApplicationContextEvent?
+                - {@code ApplicationContext}이(가) 초기화되거나 새로 고쳐질 때 발생하는 이벤트.
 
 H2 Console?
     H2 설정?
@@ -12,6 +40,11 @@ H2 Console?
         - spring.h2.console.path=/console
         spring.h2.console.path?
             - 콘솔 어플리케이션의 url path 를 지정한다.
+
+Web Spring
+    @CrossOrigin?
+        - 특정 Handler Method 에 대한 Cross-Origin 요청을 허용하기 위한 주석.
+        적절한 {@code HandlerMapping}이(가) 구성된 경우 처리됩니다.
 
 
 JPA

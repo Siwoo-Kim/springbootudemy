@@ -1,5 +1,7 @@
 package com.siwoo.springbootudemy.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +9,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter @Setter
-@Entity
+@Getter @Setter @Entity
 public class Author {
 
     @Id
@@ -17,6 +18,7 @@ public class Author {
     private String firstName;
     private String lastName;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "authors",
             cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
